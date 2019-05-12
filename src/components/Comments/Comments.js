@@ -19,6 +19,7 @@ class Comments extends Component {
         if(this.state.comments !== '') {
             console.log('in handleSubmit');
             this.props.dispatch({ type: 'ADD_COMMENTS', payload: this.state.comments })
+            this.props.history.push('/feedback')
         } else {
             alert('Please leave a comment to continue')
         }

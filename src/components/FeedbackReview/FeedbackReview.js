@@ -6,12 +6,15 @@ class FeedbackReview extends Component {
     submitButton = () => {
         if(this.props.showFeedback.comments !== '') {
             console.log('Submit is clicked');
-            return <button>SUBMIT</button>
+            return <button onClick={this.handleSubmit}>SUBMIT</button>
         } else {
             return <button>INCOMPLETE</button>
         }
     }
 
+    handleSubmit = () => {
+        this.props.submitFeedback(this.props.showFeedback);
+    }
 
     render() {
         return(
