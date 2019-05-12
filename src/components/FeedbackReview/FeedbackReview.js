@@ -14,6 +14,7 @@ class FeedbackReview extends Component {
 
     handleSubmit = () => {
         this.props.submitFeedback(this.props.showFeedback);
+        this.props.history.push('/newfeedback')
     }
 
     render() {
