@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-import Header from '../Header/Header';
+// import Header from '../Header/Header';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
@@ -13,6 +13,8 @@ import { connect } from 'react-redux';
 
 class App extends Component {
 
+
+  // A function to POST feedbacks to the database
   submitFeedback = (feedback) => {
     axios({
       method: 'POST',
@@ -30,10 +32,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header>
+          {/* <header>
             <Header />
           </header>
-          <br />
+          <br /> */}
           <Route exact path='/' component={Feeling} />
           <Route exact path='/understanding' component={Understanding} />
           <Route exact path='/support' component={Support} />

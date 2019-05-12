@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Feedback from '../FeedbackReview/FeedbackReview';
+import Header from '../Header/Header';
+import '../Support/Support.css'
+import Button from '@material-ui/core/Button';
+
 
 
 class Support extends Component {
@@ -9,6 +13,7 @@ class Support extends Component {
         support: 0
     }
 
+    // Get value from input
     handleChange = (event) => {
         console.log('In handleChange', this.state);
         this.setState({
@@ -16,6 +21,7 @@ class Support extends Component {
         })
     }
 
+    // Function to send value of support to the feedbackReducer and will route user to comments page.
     handleSubmit = (event) => {
         event.preventDefault();
         if(this.state.support !== 0) {
@@ -31,10 +37,13 @@ class Support extends Component {
     render() {
         return (
             <div>
+                <header>
+                    <Header />
+                </header>
                 <h2>How well are you being supported?</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="number" name="support" min="1" max="5" onChange={this.handleChange} />
-                    <button type="submit">Next</button>
+                    <input className="supportField" type="number" name="support" min="1" max="5" onChange={this.handleChange} />
+                    <Button variant="contained" color="primary" type="submit">Next</Button>
                 </form>
                 <br />
                 <Feedback />
