@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import Feedback from '../FeedbackReview/FeedbackReview';
 
 class Feeling extends Component {
     state = {
@@ -13,7 +14,8 @@ class Feeling extends Component {
         })
     }
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault();
         console.log('in handleSubmit');
         this.props.dispatch({type: 'ADD_FEELING', payload: this.state.feeling})
     }
@@ -26,6 +28,8 @@ class Feeling extends Component {
                     <input type="number" name="feeling" onChange={this.handleChange} />
                     <button type="submit">Next</button>
                 </form>
+                <br/>
+                <Feedback />
 
             </div>
             
