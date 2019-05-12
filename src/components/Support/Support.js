@@ -6,20 +6,21 @@ import Feedback from '../FeedbackReview/FeedbackReview';
 class Support extends Component {
 
     state = {
-        Support: 0
+        support: 0
     }
 
     handleChange = (event) => {
         console.log('In handleChange', this.state);
         this.setState({
-            Support: event.target.value
+            support: event.target.value
         })
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
         console.log('in handleSubmit');
-        this.props.dispatch({ type: 'ADD_SUPPORT', payload: this.state.Support })
+        this.props.dispatch({ type: 'ADD_SUPPORT', payload: this.state.support})
+        this.props.history.push('/comments')
     }
 
 
@@ -33,7 +34,6 @@ class Support extends Component {
                 </form>
                 <br />
                 <Feedback />
-
             </div>
         )
     }
