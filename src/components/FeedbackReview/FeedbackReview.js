@@ -2,6 +2,17 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 class FeedbackReview extends Component {
+
+    submitButton = () => {
+        if(this.props.showFeedback.comments !== '') {
+            console.log('Submit is clicked');
+            return <button>SUBMIT</button>
+        } else {
+            return <button>INCOMPLETE</button>
+        }
+    }
+
+
     render() {
         return(
             <div>
@@ -10,6 +21,7 @@ class FeedbackReview extends Component {
                 <p>Understanding: {this.props.showFeedback.understanding}</p>
                 <p>Support: {this.props.showFeedback.support}</p>
                 <p>Comments: {this.props.showFeedback.comments}</p>
+                {this.submitButton()}
             </div>
         )
     }
