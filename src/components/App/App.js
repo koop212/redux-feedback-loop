@@ -14,7 +14,7 @@ class App extends Component {
         </header>
         <br />
         <Router>
-          <Feeling />
+          <Route exact path = '/' component = {Feeling} />
         </Router>
       </div>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {connect} from 'react-redux';
 
 class Feeling extends Component {
     state = {
@@ -13,7 +13,11 @@ class Feeling extends Component {
         })
     }
 
-    
+    handleSubmit = () => {
+        console.log('in handleSubmit');
+        this.props.dispatch({type: 'ADD_FEELING', payload: this.state.feeling})
+    }
+
 
     render() {
         return(
@@ -29,4 +33,4 @@ class Feeling extends Component {
     }
 }
 
-export default Feeling;
+export default connect()(Feeling);
