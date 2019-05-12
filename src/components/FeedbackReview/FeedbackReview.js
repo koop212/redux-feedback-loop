@@ -6,6 +6,7 @@ class FeedbackReview extends Component {
         return(
             <div>
                 <p>Feeling: {this.props.showFeedback.feeling}</p>
+                <p>Understanding: {this.props.showFeedback.understanding}</p>
 
 
             </div>

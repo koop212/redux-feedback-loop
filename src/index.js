@@ -17,6 +17,8 @@ const feedbackState = {
 const feedbackReducer = (state = feedbackState, action) => {
     if(action.type === 'ADD_FEELING') {
         return state = {...state, feeling: action.payload}
+    } else if(action.type === 'ADD_UNDERSTANDING') {
+        return state = { ...state, understanding: action.payload }
     }
     return state
 }
