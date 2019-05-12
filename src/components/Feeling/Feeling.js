@@ -17,9 +17,13 @@ class Feeling extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log('in handleSubmit');
-        this.props.dispatch({type: 'ADD_FEELING', payload: this.state.feeling})
-        this.props.history.push('/understanding')
+        if(this.state.feeling !== 0) {
+            console.log('in handleSubmit');
+            this.props.dispatch({ type: 'ADD_FEELING', payload: this.state.feeling })
+            this.props.history.push('/understanding')
+        } else {
+            alert('Please select a number between 1 and 5')
+        }
     }
 
 

@@ -16,8 +16,12 @@ class Comments extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log('in handleSubmit');
-        this.props.dispatch({ type: 'ADD_COMMENTS', payload: this.state.comments })
+        if(this.state.comments !== '') {
+            console.log('in handleSubmit');
+            this.props.dispatch({ type: 'ADD_COMMENTS', payload: this.state.comments })
+        } else {
+            alert('Please leave a comment to continue')
+        }
     }
 
 

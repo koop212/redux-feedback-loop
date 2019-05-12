@@ -18,9 +18,13 @@ class Support extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log('in handleSubmit');
-        this.props.dispatch({ type: 'ADD_SUPPORT', payload: this.state.support})
-        this.props.history.push('/comments')
+        if(this.state.support !== 0) {
+            console.log('in handleSubmit');
+            this.props.dispatch({ type: 'ADD_SUPPORT', payload: this.state.support })
+            this.props.history.push('/comments')
+        } else {
+            alert('Please select a number between 1 and 5')
+        }
     }
 
 
